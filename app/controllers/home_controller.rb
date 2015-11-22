@@ -10,7 +10,12 @@ class HomeController < ApplicationController
 
   def favourite
     favourites = JSON.parse(cookies[:favourites])
-    favourites.push params[:id_api]
+    id_api = params[:id_api]
+    if favourites.include? id_api
+      favourites.delete id_api
+    else
+      favourites.push params[:id_api]
+    end
     cookies[:favourites] = JSON.generate(favourites.uniq)
     @member = Member.where(id_api: params[:id_api]).first
   end
