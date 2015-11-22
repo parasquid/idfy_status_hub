@@ -12,7 +12,11 @@ module HomeHelper
   def ethnicity_string
     ethnicity = params[:ethnicity]
     if ethnicity.nil?
-      "All"
+      if params[:favourites]
+        "Favourite"
+      else
+        "All"
+      end
     else
       ETHNICITY_LUT[ethnicity.to_i].to_s.titleize
     end

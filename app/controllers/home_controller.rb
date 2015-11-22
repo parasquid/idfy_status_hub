@@ -1,11 +1,7 @@
 class HomeController < ApplicationController
   def index
     cookies[:favourites] ||= JSON.generate([])
-    if params[:favourites]
-      favourites = JSON.parse(cookies[:favourites])
-    else
-      favourites = []
-    end
+    favourites = JSON.parse(cookies[:favourites]) if params[:favourites]
     @members = Member.
       ethnicity_filter(params[:ethnicity]).
       favourites_filter(favourites).
