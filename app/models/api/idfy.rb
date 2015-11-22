@@ -1,7 +1,6 @@
 module Api
   class Idfy
     include HTTParty
-    # debug_output $stdout if Rails.env.development?
     base_uri 'https://idfy.0x10.info/api'
 
     def initialize(type: 'json')
@@ -16,6 +15,9 @@ module Api
     end
 
     def api_hits
+      params = @options.merge({query: 'api_hits'})
+      result = self.class.get("/idfy-status", query: params)
+      result.to_hash["api_hits"]
     end
   end
 end

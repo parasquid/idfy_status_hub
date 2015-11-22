@@ -17,4 +17,8 @@
   <ul class="nav nav-sidebar">
     <li class="<%= nav_active("favourites")%>"><%= link_to "Open Favourites", root_path(favourites: true) %></li>
   </ul>
+  <div class="well statistics">
+    <div>Total Status:  <span class="label label-default"><%= Member.count %></span></div>
+    <div>API Hits:  <span class="label label-default"><%= Api::Idfy.new.api_hits %></span></div>
+  </div>
 </div>
