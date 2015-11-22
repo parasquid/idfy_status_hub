@@ -42,7 +42,7 @@ class Member < ActiveRecord::Base
   end
 
   def ethnicity_string
-    ETHNICITY_LUT[ethnicity]
+    ETHNICITY_LUT[ethnicity].to_s.titleize
   end
 
   def weight_in_kg

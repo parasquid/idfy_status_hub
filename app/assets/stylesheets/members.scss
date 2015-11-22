@@ -84,22 +84,68 @@ body {
   margin-top: 0;
 }
 
-
-/*
- * Placeholder dashboard ideas
- */
-
-.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
+.member-card {
+  display: block;
+  padding: 4px;
   margin-bottom: 20px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  -o-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+
+  span {
+    font-size: 1.2em;
+  }
+
+  span.glyphicon {
+    vertical-align: text-bottom;
+    display: inline-block;
+  }
+
+  blockquote {
+    margin: 0.3em 10px 0.4em;
+    padding: 0em 10px;
+    quotes: "\201C""\201D";
+    border-left: none;
+    font-size: 2.8em;
+    line-height: 1.1em;
+    display: block;
+    min-height: 2.2em;
+  }
+
+  blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 8em;
+    line-height: 0.1em;
+    float: left;
+    margin-top: 0.15em;
+  }
+
+  blockquote p {
+    display: inline;
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  .ethnicity {
+    text-align: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 2.6em;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+    display: block;
+  }
+
+  .information {
+    clear: both;
+  }
 }
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
-}
+
