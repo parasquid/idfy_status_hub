@@ -1,5 +1,6 @@
 class Member < ActiveRecord::Base
   scope :ethnicity_filter, ->(filter=nil) { where(ethnicity: filter) unless filter.nil? }
+  scope :favourites_filter, ->(filter=[]) { where(id_api: filter) unless filter.nil? || filter.empty? }
 
   def self.create_from_api(member_hash)
     Member.create(

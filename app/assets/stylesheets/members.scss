@@ -129,8 +129,13 @@ body {
     display: inline;
   }
 
+  form {
+    display: inline-block;
+  }
+
   .actions {
     text-align: center;
+    margin-top: 4px;
   }
 
   .ethnicity {
@@ -146,6 +151,8 @@ body {
 
   .information {
     clear: both;
+    display: block;
+    padding-top: 2px;
   }
 }
 
