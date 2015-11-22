@@ -1,21 +1,9 @@
 class Member < ActiveRecord::Base
+  scope :ethnicity_filter, ->(filter=0) { where(ethnicity: filter) if filter }
+
   def self.create_from_api(member_hash)
     Member.create(
       id_api: member_hash["id"],
-      dob: Date.parse(member_hash["dob"]),
-      status: member_hash["status"],
-      ethnicity: member_hash["ethnicity"],
-      weight: member_hash["weight"],
-      height: member_hash["height"],
-      is_veg: member_hash["is_veg"].to_bool,
-      drink: member_hash["drink"].to_bool,
-      image: member_hash["image"]
-    )
-  end
-
-  def update_from_api(member_hash)
-    update_attributes!(
-      # ignore id_api
       dob: Date.parse(member_hash["dob"]),
       status: member_hash["status"],
       ethnicity: member_hash["ethnicity"],
@@ -37,5 +25,27 @@ class Member < ActiveRecord::Base
       create_from_api(member_hash)
       Rails.logger.debug { "created ##{member_hash}"}
     end
+  end
+
+  def update_from_api(member_hash)
+    update_attributes!(
+      # ignore id_api
+      dob: Date.parse(member_hash["dob"]),
+      status: member_hash["status"],
+      ethnicity: member_hash["ethnicity"],
+      weight: member_hash["weight"],
+      height: member_hash["height"],
+      is_veg: member_hash["is_veg"].to_bool,
+      drink: member_hash["drink"].to_bool,
+      image: member_hash["image"]
+    )
+  end
+
+  def ethnicity_string
+    ETHNICITY_LUT[ethnicity]
+  end
+
+  def weight_in_kg
+    weight / 100.0
   end
 end
