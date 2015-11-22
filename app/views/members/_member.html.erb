@@ -8,7 +8,12 @@
         } do %>
         <span class="glyphicon glyphicon-heart"></span>
       <% end %>&nbsp;
-      <button class="btn btn-default download"><span class="glyphicon glyphicon-download-alt"></span></button>&nbsp;
+      <%= button_to member_path(member), {
+        method: "get",
+        class: "btn btn-default download"
+        } do %>
+        <span class="glyphicon glyphicon-download-alt"></span>
+      <% end %>&nbsp;
       <button class="btn btn-default share"><span class="glyphicon glyphicon-share"></span></button>
     </div>
   </div>
