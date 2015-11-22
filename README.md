@@ -40,3 +40,9 @@ This app fulfilled just one of the advanced requirements:
 * Since the member api does is not very flexible with regard to filtration and searches, I opted to download the full member list and do the queries from a local database. The intention is to have a background worker periodically refresh the local copy from the API, either via a callback (the api will tell the app when there is new data to be fetched) or through polling.
 
 # Some images
+
+![Home](https://raw.githubusercontent.com/parasquid/idfy_status_hub/master/public/home.png)
+
+![Favourites](https://raw.githubusercontent.com/parasquid/idfy_status_hub/master/public/favourites.png)
+
+![Download](https://raw.githubusercontent.com/parasquid/idfy_status_hub/master/public/download.png)
