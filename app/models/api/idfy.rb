@@ -1,7 +1,7 @@
 module Api
   class Idfy
     include HTTParty
-    debug_output $stdout if Rails.env.development?
+    # debug_output $stdout if Rails.env.development?
     base_uri 'https://idfy.0x10.info/api'
 
     def initialize(type: 'json')
