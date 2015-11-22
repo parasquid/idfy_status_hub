@@ -1,9 +1,12 @@
 module HomeHelper
-  def nav_active(ethnicity)
-    if ethnicity.nil? && params[:ethnicity].nil?
+  def nav_active(option)
+    if option.nil? && params[:ethnicity].nil? && params[:favourites].nil?
       return "active"
+    elsif params[:ethnicity]
+      params[:ethnicity] == option.to_s ? "active" : ""
+    elsif params[:favourites] && option == "favourites"
+      params[:favourites] == "true" ? "active" : ""
     end
-    params[:ethnicity] == ethnicity.to_s ? "active" : ""
   end
 
   def ethnicity_string

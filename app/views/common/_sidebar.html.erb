@@ -15,6 +15,6 @@
     <li class="<%= nav_active(9)%>"><%= link_to "Arabic", root_path(ethnicity: 9) %></li>
   </ul>
   <ul class="nav nav-sidebar">
-    <li><a href="">Open Favourites</a></li>
+    <li class="<%= nav_active("favourites")%>"><%= link_to "Open Favourites", root_path(favourites: true) %></li>
   </ul>
 </div>
