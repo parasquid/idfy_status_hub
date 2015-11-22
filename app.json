@@ -1,0 +1,27 @@
+{
+  "name": "IDfy Status Hub",
+  "description": "Entry for the IDfy Full Stack Developer Hiring Challenge",
+  "keywords": [
+    "idfy",
+    "hackerearth",
+    "ruby on rails"
+  ],
+  "website": "https://github.com/parasquid/idfy_status_hub",
+  "repository": "https://github.com/parasquid/idfy_status_hub",
+  "logo": "http://www.logologo.com/logos/globe-compass-logo.jpg",
+  "success_url": "/",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "env": {
+    "SECRET_TOKEN": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "The number of processes to run.",
+      "value": "5"
+    }
+  },
+  "image": "heroku/ruby",
+  }
