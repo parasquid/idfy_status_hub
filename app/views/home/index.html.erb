@@ -9,9 +9,10 @@
 
       <div class="table-responsive">
 
-        <%= render @members %>
+        <div id="member-list">
+          <%= render @members %>
+        </div>
         <%= will_paginate @members, renderer: BootstrapPagination::Rails  %>
-
       </div>
     </div>
   </div>
