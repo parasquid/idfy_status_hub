@@ -20,6 +20,6 @@ module HomeHelper
 
   def is_favourite_class(id)
     favourites = JSON.parse(cookies[:favourites])
-    favourites.include?(id) ? "btn-success" : "btn-default"
+    favourites.include?(id.to_s) ? "btn-success" : "btn-default"
   end
 end

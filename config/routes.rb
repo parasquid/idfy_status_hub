@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root to: 'home#index'
-  post 'home/favourite/:api_id', to: 'home#favourite', as: 'home_favourite'
+  post 'home/favourite/:id_api', to: 'home#favourite', as: 'home_favourite'
 end

@@ -4,7 +4,7 @@
     <div class="actions">
       <%= button_to home_favourite_path(member.id_api), {
         remote: true,
-        class: "btn btn-default favourite #{is_favourite_class(member.id_api)}"
+        class: "btn favourite #{is_favourite_class(member.id_api)}"
         } do %>
         <span class="glyphicon glyphicon-heart"></span>
       <% end %>&nbsp;
