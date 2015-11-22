@@ -4,13 +4,10 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header"><%= ethnicity_string %> Members</h1>
 
-      <div class="row placeholders">
-      </div>
-
       <div class="table-responsive">
 
         <div id="member-list">
-          <%= render @members %>
+          <%= render(@members) || "Sorry, no members found" %>
         </div>
         <%= will_paginate @members, renderer: BootstrapPagination::Rails  %>
       </div>
