@@ -12,16 +12,5 @@
   "success_url": "/",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate members:create_or_update"
-  },
-  "env": {
-    "SECRET_TOKEN": {
-      "description": "A secret key for verifying the integrity of signed cookies.",
-      "generator": "secret"
-    },
-    "WEB_CONCURRENCY": {
-      "description": "The number of processes to run.",
-      "value": "5"
-    }
-  },
-  "image": "heroku/ruby",
   }
+}
